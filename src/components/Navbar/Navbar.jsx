@@ -29,6 +29,7 @@ export default function Navbar() {
     setActiveClass(elem)
     const hashContent = elem.hash
     handleScroll(elem, hashContent)
+    elem.closest('.nav').classList.remove('active')
   }
 
   const links = [

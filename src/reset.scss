@@ -55,6 +55,9 @@ body {
   font-weight: 400;
   overflow-x: hidden;
 }
+#root {
+  scroll-padding-top: 4em;
+}
 .container {
   max-width: 1300px;
   margin: auto;
