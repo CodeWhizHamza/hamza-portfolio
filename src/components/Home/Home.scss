@@ -5,6 +5,7 @@
   padding: 2em;
   min-height: 75vh;
   position: relative;
+  padding-top: 4em;
 
   & > * {
     flex-basis: 100%;
@@ -36,6 +37,7 @@
 
   @media only screen and (max-width: 48em) {
     flex-direction: column;
+    padding-top: 8em;
 
     &__title {
       max-width: fit-content;
