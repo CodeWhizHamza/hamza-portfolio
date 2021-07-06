@@ -3,6 +3,7 @@ import Navbar from './Navbar/Navbar'
 import Home from './Home/Home'
 import Work from './Work/Work'
 import Services from './Services/Services'
+import Socials from './Socials/Socials'
 
 // Styles
 import '../reset.css'
@@ -14,6 +15,7 @@ export default function UI() {
       <Home id="home" />
       <Work />
       <Services />
+      <Socials />
     </>
   )
 }

@@ -1,0 +1,49 @@
+.socials {
+  position: relative;
+  padding: 1em;
+  transition: background 0.2s ease;
+
+  &__icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    padding-bottom: 10em;
+  }
+}
+
+.social {
+  background-color: var(--white);
+  padding: 2em 2.5em;
+  border-radius: 0.5em;
+  box-shadow: 0 0 1em rgba(#000, 0.2);
+
+  margin: 1em;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  &__img {
+    width: 80px;
+    height: 80px;
+  }
+  &::after {
+    content: attr(dataname);
+    display: block;
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 6.4rem;
+    color: var(--gray-500);
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+  &:hover::after {
+    opacity: 1;
+    transform: translate(-50%, -2rem);
+  }
+}
