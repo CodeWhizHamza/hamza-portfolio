@@ -1,0 +1,136 @@
+.contact {
+  padding: 1em;
+  background-color: var(--secondary-100);
+  border: 1em solid white;
+  border-radius: 2em;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  &__title {
+    font-size: 6.4rem;
+    font-family: var(--font-display);
+    margin-top: 1em;
+    margin-bottom: 0.125em;
+  }
+  &__subtitle {
+    font-size: 2.4rem;
+    margin-bottom: 4rem;
+  }
+  &__details {
+    display: flex;
+    margin-bottom: 1.5em;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+.detail {
+  width: 280px;
+  padding: 2em;
+  margin: 0.5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1em;
+  transition: background 0.3s ease;
+  cursor: pointer;
+
+  &__img {
+    margin-bottom: 1.5em;
+  }
+  &__text {
+    word-wrap: break-word;
+    word-break: break-all;
+    text-align: center;
+  }
+
+  &:hover {
+    background-color: #fff;
+  }
+}
+
+.form {
+  background-color: #fff;
+  width: 80%;
+  padding: 3em 2.5em;
+  border-radius: 1em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  @media only screen and (max-width: 30em) {
+    width: 100%;
+    padding: 2em 1em;
+  }
+
+  &__col {
+    padding: 1em;
+    flex-basis: 45%;
+    margin-bottom: 1em;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    flex-direction: column;
+
+    @media only screen and (max-width: 1130px) {
+      flex-basis: 100%;
+    }
+  }
+
+  &__input-el {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    &:not(:last-child) {
+      margin-bottom: 2em;
+    }
+  }
+  &__label {
+    margin-bottom: 0.125em;
+  }
+  &__img {
+    position: absolute;
+    height: 2.4rem;
+    width: 2.4rem;
+    left: 1.2rem;
+    bottom: 1em;
+    pointer-events: none;
+  }
+  &__input,
+  &__textarea {
+    padding: 1em 1em 1em 2.75em;
+    border: none;
+    outline: none;
+    border-radius: 0.5em;
+    background-color: var(--gray-100);
+    font-size: inherit;
+    font-family: inherit;
+    display: block;
+    width: 100%;
+
+    &:hover {
+      background-color: var(--gray-200);
+    }
+  }
+  &__textarea-box {
+    height: 100%;
+  }
+  &__textarea {
+    resize: none;
+    height: 92%;
+    padding: 1em;
+  }
+}
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+  box-shadow: 0 0 0 1000px #1b1b1b inset !important;
+  -webkit-text-fill-color: white !important;
+}

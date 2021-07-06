@@ -31,6 +31,7 @@
     height: 80px;
   }
   &::after {
+    pointer-events: none;
     content: attr(dataname);
     display: block;
     position: absolute;

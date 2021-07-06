@@ -4,6 +4,7 @@ import Home from './Home/Home'
 import Work from './Work/Work'
 import Services from './Services/Services'
 import Socials from './Socials/Socials'
+import Contact from './Contact/Contact'
 
 // Styles
 import '../reset.css'
@@ -16,6 +17,7 @@ export default function UI() {
       <Work />
       <Services />
       <Socials />
+      <Contact />
     </>
   )
 }
