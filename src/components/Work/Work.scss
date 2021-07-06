@@ -1,0 +1,212 @@
+.works {
+  padding: 1em;
+}
+
+.work {
+  height: 530px;
+  padding: 0.5em 0;
+  margin-bottom: 1em;
+  position: relative;
+
+  &__content {
+    width: 40%;
+
+    &::after {
+      content: '';
+      clear: both;
+    }
+  }
+  &__desc {
+    padding: 1em 1.5em;
+    background-color: rgba(#fff, 0.8);
+    backdrop-filter: blur(0.5em);
+    position: relative;
+    z-index: 3;
+    margin-left: 1em;
+    margin-top: 1.5em;
+    width: 120%;
+    border-radius: 1em;
+    box-shadow: -4px 4px 1em rgba(#323c3e, 0.2);
+  }
+  &__content {
+    float: left;
+  }
+  &__title {
+    font-size: 4rem;
+  }
+  &__text {
+    color: var(--black-medium);
+    margin-bottom: 1em;
+    font-size: 1.4rem;
+  }
+  &__techs {
+    position: relative;
+    z-index: 1;
+    width: fit-content;
+    margin-top: 2em;
+    right: 0;
+    transition: right 0.3s linear 0.3s, z-index 0.01s linear 0.3s,
+      transform 0.3s linear;
+  }
+  &__tech {
+    width: fit-content;
+    border-radius: 0.5em;
+    color: var(--white);
+    margin: 0.5em 0;
+    font-weight: bold;
+
+    &--blue {
+      background-color: var(--primary-300);
+    }
+    &--green {
+      background-color: var(--tertiary-200);
+    }
+    &--yellow {
+      background-color: var(--secondary-200);
+      color: var(--black-medium);
+    }
+  }
+
+  &__img-area {
+    position: relative;
+    z-index: 2;
+    border-radius: 1.5em;
+    overflow: hidden;
+    width: 60%;
+    height: 100%;
+    opacity: 0.8;
+    backdrop-filter: blur(1em);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &::after {
+      content: '';
+      clear: both;
+    }
+  }
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.3s ease;
+  }
+  &:hover {
+    .work__img {
+      width: 101%;
+      height: 101%;
+    }
+  }
+
+  &--rtl {
+    .work__techs {
+      margin-left: auto;
+      margin-right: -1.25em;
+    }
+    .work__tech {
+      padding: 0.5em 2.5em 0.5em 0.5em;
+      margin-left: auto;
+    }
+    &:hover {
+      .work__techs {
+        right: 40px;
+        transform: translateX(40px);
+        z-index: 5;
+        transition-delay: 0s, 0.3s, 0.3s;
+      }
+    }
+    .work__img-area {
+      float: right;
+    }
+  }
+  &--ltr {
+    .work__content {
+      float: right;
+    }
+    .work__desc {
+      margin-left: -6em;
+      @media only screen and (max-width: 37.5em) {
+        margin-left: auto;
+      }
+    }
+    .work__techs {
+      margin-left: -1.25em;
+    }
+    .work__tech {
+      padding: 0.5em 0.5em 0.5em 2.5em;
+      margin-right: auto;
+    }
+    &:hover {
+      .work__techs {
+        right: -40px;
+        transform: translateX(-40px);
+        z-index: 5;
+        transition-delay: 0s, 0.3s, 0.3s;
+      }
+    }
+    .work__img-area {
+      float: left;
+    }
+  }
+
+  @media only screen and (max-width: 1000px) {
+    height: 450px;
+  }
+  @media only screen and (max-width: 768px) {
+    height: 400px;
+
+    &__techs {
+      margin-top: 1em;
+    }
+  }
+  @media only screen and (max-width: 37.5em) {
+    &__content {
+      position: absolute;
+      width: 100%;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 5;
+    }
+    &__desc {
+      width: 80%;
+      margin: auto;
+      background-color: rgba(#fff, 0.9);
+    }
+    &__img-area {
+      float: none;
+      width: 100%;
+    }
+    &--rtl,
+    &--ltr {
+      .work__techs {
+        position: absolute;
+        margin: 0;
+
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+        top: 95%;
+        left: 50%;
+        transform: translateX(-50%);
+
+        transition: top 0.3s linear 0.3s, z-index 0.01s linear 0.3s,
+          transform 0.3s linear;
+      }
+      .work__tech {
+        padding: 1.5em 0.5em 0.5em 0.5em;
+        margin: 0 0.25em;
+      }
+      &:hover {
+        .work__techs {
+          right: 0;
+          z-index: 6;
+          top: 100%;
+          transform: translateX(-50%) translateY(-20%);
+          transition-delay: 0s, 0.3s, 0.3s;
+        }
+      }
+    }
+  }
+}
