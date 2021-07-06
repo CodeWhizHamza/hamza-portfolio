@@ -2,8 +2,8 @@
   background-color: rgba(#fff, 0.9);
   backdrop-filter: blur(1em);
   box-shadow: 0 4px 1em rgba(#49575a, 0.1);
-  // position: sticky;
-  // top: 0;
+  position: sticky;
+  top: 0;
   z-index: 20;
 
   &__navbar {
@@ -12,12 +12,10 @@
     align-items: center;
     gap: 2.5em;
   }
-
   &__logo {
     width: 13rem;
     cursor: pointer;
   }
-
   &__toggler {
     flex-basis: 5rem;
     width: 5rem;
@@ -47,7 +45,6 @@
       }
     }
   }
-
   &__content {
     margin-left: auto;
     display: flex;
@@ -55,12 +52,10 @@
     align-items: center;
     flex-basis: 100%;
   }
-
   &__links {
     display: flex;
     list-style: none;
   }
-
   &__item {
     position: relative;
 
@@ -97,7 +92,6 @@
   &__btn {
     margin-left: auto;
   }
-
   @media only screen and (max-width: 48em) {
     &__navbar {
       justify-content: space-between;
