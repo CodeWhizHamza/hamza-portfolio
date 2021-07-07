@@ -1,13 +1,14 @@
 import React from 'react'
+import blur from './blur.svg'
 
 export default function Service({ title, text, isLtr, imgURL }) {
   return (
     <article className={'service' + (isLtr ? ' service--ltr' : '')}>
-      <div className="service__img-cont">
+      <div
+        style={{ backgroundImage: `url(${blur})` }}
+        className="service__img-cont"
+      >
         <img src={imgURL} alt={title} className="service__img" />
-        <div className="service__blur service__blur--blue"></div>
-        <div className="service__blur service__blur--yellow"></div>
-        <div className="service__blur service__blur--green"></div>
       </div>
       <div className="service__content">
         <h3 className="service__title">{title}</h3>

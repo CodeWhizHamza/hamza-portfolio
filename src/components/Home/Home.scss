@@ -5,6 +5,7 @@
   padding: 2em;
   min-height: 75vh;
   position: relative;
+  z-index: 5;
   padding-top: 4em;
 
   & > * {
@@ -82,44 +83,5 @@
   }
   100% {
     transform: translateY(0);
-  }
-}
-
-.blur {
-  position: absolute;
-  z-index: -1;
-
-  &--blue {
-    width: 40rem;
-    height: 40rem;
-    background-color: var(--primary-300);
-    border-radius: 50%;
-    filter: blur(25rem);
-    opacity: 0.4;
-
-    top: 10vw;
-    left: -12vw;
-  }
-  &--green {
-    width: 19rem;
-    height: 19rem;
-    background-color: var(--tertiary-200);
-    border-radius: 50%;
-    filter: blur(20rem);
-    opacity: 0.5;
-
-    top: 25vw;
-    left: 22vw;
-  }
-  &--yellow {
-    width: 23rem;
-    height: 23rem;
-    background-color: var(--secondary-200);
-    border-radius: 50%;
-    filter: blur(20rem);
-    opacity: 0.5;
-
-    top: 6vw;
-    left: 24vw;
   }
 }
