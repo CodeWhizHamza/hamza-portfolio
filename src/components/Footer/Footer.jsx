@@ -1,5 +1,4 @@
 import React from 'react'
-import ButtonOutline from './../common/ButtonOutline/ButtonOutline'
 import './Footer.css'
 
 export default function Footer() {
@@ -10,10 +9,14 @@ export default function Footer() {
         <h4 className="footer__subtitle">
           Let me change your ideas to reality.
         </h4>
-        <ButtonOutline
-          text="Start working!"
-          href="https://www.fiverr.com/hamza_webdesign"
-        />
+        <button
+          className="btn-outline"
+          onClick={() =>
+            window.open('https://www.fiverr.com/hamza_webdesign', '_blank')
+          }
+        >
+          Start working!
+        </button>
       </div>
       <div className="footer__bottom">
         &copy; Hamza, 2021. A portfolio site designed and developed by Hamza.

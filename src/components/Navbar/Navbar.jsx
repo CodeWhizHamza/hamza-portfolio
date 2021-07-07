@@ -1,13 +1,13 @@
 import React from 'react'
-import ButtonSolid from '../common/ButtonSolid/ButtonSolid'
 import Toggler from './Toggler'
 import logo from '../../logo.svg'
 import './Navbar.css'
+import Logo from './Logo'
+import NavContent from './NavContent'
 
 export default function Navbar() {
   const clearActiveClass = items =>
     items.forEach(i => i.classList.remove('nav__item--active'))
-
   const setActiveClass = element => {
     const navContainer = element.closest('.nav__links')
     const navLinks = navContainer.querySelectorAll('.nav__item')
@@ -22,7 +22,6 @@ export default function Navbar() {
       .querySelector(elem.getAttribute('href'))
       .scrollIntoView({ behavior: 'smooth' })
   }
-
   const handleItemClick = e => {
     e.preventDefault()
     const { target: elem } = e
@@ -43,44 +42,9 @@ export default function Navbar() {
   return (
     <nav className="nav">
       <div className="container nav__navbar">
-        <a onClick={handleItemClick} href="#home">
-          <img src={logo} alt="Logo" className="nav__logo" />
-        </a>
-
+        <Logo {...{ handleItemClick, logo }} />
         <Toggler />
-
-        <div className="nav__content">
-          <ul className="nav__links">
-            {links.map((link, i) => {
-              return (
-                <li
-                  key={i}
-                  onClick={handleItemClick}
-                  className={
-                    'nav__item' + (link.isActive ? ' nav__item--active' : '')
-                  }
-                >
-                  <a
-                    href={link.path}
-                    onClick={handleItemClick}
-                    className="nav__link"
-                  >
-                    {link.content}
-                  </a>
-                </li>
-              )
-            })}
-          </ul>
-
-          <button
-            className="nav__btn btn-solid"
-            onClick={() =>
-              window.open('https://www.fiverr.com/hamza_webdesign', '_blank')
-            }
-          >
-            Hire me
-          </button>
-        </div>
+        <NavContent {...{ links, handleItemClick }} />
       </div>
     </nav>
   )
